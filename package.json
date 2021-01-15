@@ -1,0 +1,9 @@
+{
+  "name": "periodo",
+  "version": "1.0.0",
+  "description": "A simple todo managing application with time setting.",
+  "main": "index.js",
+  "repository": "https://github.com/loxygenK/periodo",
+  "author": "loxygenk",
+  "license": "MIT"
+}
