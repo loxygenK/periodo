@@ -17,6 +17,7 @@ const config: Configuration = {
   resolve: {
     extensions: [".tsx", ".ts", ".js", ".scss"],
     alias: {
+      "@api": path.resolve(__dirname, "src/api"),
       "@comp": path.resolve(__dirname, "src/comps"),
       "@style": path.resolve(__dirname, "src/style"),
       "@root": path.resolve(__dirname, "src")
