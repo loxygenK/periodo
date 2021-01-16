@@ -32,7 +32,7 @@ jobs:
         run: yarn install --frozen-lockfile
       
       - name: Run eslint
-        run: yarn lint:es
+        run: yarn lint:eslint
 
   stylelint:
     runs-on: ubuntu-latest
@@ -59,7 +59,7 @@ jobs:
         run: yarn install --frozen-lockfile
       
       - name: Run eslint
-        run: yarn lint:style
+        run: yarn lint:stylelint
 
   prettier:
     runs-on: ubuntu-latest
