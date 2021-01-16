@@ -1,7 +1,9 @@
 import React, { StrictMode } from "react";
 import { render } from "react-dom";
 
-import App from "./app";
+import App from "@comp/app";
+
+import "ress";
 
 render(
   <StrictMode>

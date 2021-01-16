@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "A simple todo managing application with time setting.",
   "main": "index.js",
-  "repository": "https://github.com/loxygenK/periodo",
+  "repository": {
+    "type": "Git",
+    "url": "https://github.com/loxygenK/periodo"
+  },
   "author": "loxygenk",
   "license": "MIT",
   "devDependencies": {
@@ -21,11 +24,15 @@
     "babel-loader": "^8.2.2",
     "copy-webpack-plugin": "^7.0.0",
     "css-loader": "^5.0.1",
+    "eslint": "^7.18.0",
     "fibers": "^5.0.0",
     "html-webpack-plugin": "^4.5.1",
     "sass": "^1.32.4",
     "sass-loader": "^10.1.1",
     "style-loader": "^2.0.0",
+    "stylelint": "^13.8.0",
+    "stylelint-config-recess-order": "^2.3.0",
+    "stylelint-config-standard": "^20.0.0",
     "ts-loader": "^8.0.14",
     "ts-node": "^9.1.1",
     "typed-scss-modules": "^3.4.1",
@@ -35,9 +42,15 @@
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.13.0",
+    "@typescript-eslint/parser": "^4.13.0",
     "core-js": "^3.8.2",
+    "eslint-config-prettier": "^7.1.0",
+    "eslint-plugin-react": "^7.22.0",
+    "prettier": "^2.2.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "ress": "^3.0.0",
     "tslib": "^2.1.0"
   },
   "scripts": {
@@ -45,6 +58,14 @@
     "css": "yarn css:watch",
     "css:once": "tsm 'src/style/**/*.scss' -n dashes -e default",
     "css:watch": "yarn css:once -w",
-    "dev": "webpack serve"
+    "dev": "webpack serve",
+    "lint": "yarn lint:eslint && yarn lint:stylelint && yarn lint:prettier",
+    "lint:eslint": "eslint 'src/**/*.[jt]s?(x)'",
+    "lint:stylelint": "stylelint 'src/**/*.module.?(s)css' --syntax scss",
+    "lint:prettier": "prettier -c 'src/**/*.[jt]s?(x)'",
+    "fix": "yarn fix:eslint && yarn fix:stylelint && yarn fix:prettier",
+    "fix:eslint": "yarn lint:eslint --fix",
+    "fix:stylelint": "yarn lint:stylelint --fix",
+    "fix:prettier": "yarn lint:prettier -w"
   }
 }

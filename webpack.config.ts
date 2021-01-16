@@ -15,7 +15,12 @@ const config: Configuration = {
   target: "web",
   mode: isProduction ? "production" : "development",
   resolve: {
-    extensions: [".tsx", ".ts", ".js", ".scss"]
+    extensions: [".tsx", ".ts", ".js", ".scss"],
+    alias: {
+      "@comp": path.resolve(__dirname, "src/comps"),
+      "@style": path.resolve(__dirname, "src/style"),
+      "@root": path.resolve(__dirname, "src")
+    }
   },
   entry: {
     index: path.join(__dirname, "src", "index.tsx")
@@ -46,7 +51,7 @@ const config: Configuration = {
         ]
       },
       {
-        test: /\.scss$/,
+        test: /\.s?css$/,
         use: [
           { loader: "style-loader" },
           {
