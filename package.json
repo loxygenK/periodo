@@ -42,6 +42,7 @@
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
+    "@types/firebase": "^3.2.1",
     "@typescript-eslint/eslint-plugin": "^4.13.0",
     "@typescript-eslint/parser": "^4.13.0",
     "core-js": "^3.8.2",

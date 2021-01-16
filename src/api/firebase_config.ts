@@ -1,4 +1,5 @@
-import firebase from "firebase";
+import firebase from "firebase/app";
+import "firebase/database";
 
 const api_key = process.env.FIREBASE_API_KEY;
 const project_id = process.env.FIREBASE_PROJECT_ID;
@@ -15,4 +16,9 @@ const firebaseConfig = {
   appId: app_id
 };
 
-firebase.initializeApp(firebaseConfig)
+
+firebase.initializeApp(firebaseConfig);
+
+const database = firebase.database();
+
+export { database };

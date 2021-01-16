@@ -10,6 +10,7 @@
     "moduleResolution": "Node",
     "esModuleInterop": true,
     "skipLibCheck": true,
+    "isolatedModules": true,
     "forceConsistentCasingInFileNames": true,
     "baseUrl": "src",
     "paths": {
