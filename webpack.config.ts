@@ -15,7 +15,7 @@ const config: Configuration = {
   target: "web",
   mode: isProduction ? "production" : "development",
   resolve: {
-    extensions: [".tsx", ".ts", ".js"]
+    extensions: [".tsx", ".ts", ".js", ".scss"]
   },
   entry: {
     index: path.join(__dirname, "src", "index.tsx")
@@ -41,22 +41,16 @@ const config: Configuration = {
         test: /\.tsx?$/,
         exclude: /node_modules/,
         use: [
-          {
-            loader: "babel-loader"
-          },
-          {
-            loader: "ts-loader"
-          }
+          { loader: "babel-loader" },
+          { loader: "ts-loader" }
         ]
       },
       {
-        test: /\.(?:c|sa|sc)ss$/,
+        test: /\.scss$/,
         use: [
+          { loader: "style-loader" },
           {
-            loader: "style-loader"
-          },
-          {
-            loader: "css-loader",
+            loader: "css-loader?modules",
             options: {
               sourceMap: !isProduction,
               importLoaders: 1,
@@ -86,6 +80,9 @@ const config: Configuration = {
     publicPath: baseUrl,
     filename: "assets/scripts/[name].[contenthash:8].js",
     chunkFilename: "assets/scripts/[name].[contenthash:8].js",
+  },
+  devServer: {
+    historyApiFallback: true
   }
 }
 
