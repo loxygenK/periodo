@@ -10,7 +10,13 @@
     "moduleResolution": "Node",
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": "src",
+    "paths": {
+      "@comp/*": ["./comps/*"],
+      "@style/*": ["./style/*"],
+      "@root/*": ["./*"]
+    }
   },
   "ts-node": {
     "compilerOptions": {

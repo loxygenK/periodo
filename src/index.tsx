@@ -1,7 +1,7 @@
 import React, { StrictMode } from "react";
 import { render } from "react-dom";
 
-import App from "./comps/app";
+import App from "@comp/app";
 
 render(
   <StrictMode>
