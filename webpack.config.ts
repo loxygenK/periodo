@@ -4,6 +4,9 @@ import * as path from "path"
 import sass from "sass";
 import fibers from "fibers";
 
+import HtmlWebpackPlugin from "html-webpack-plugin";
+import CopyWebpackPlugin from "copy-webpack-plugin";
+
 const isProduction = process.env.NODE_ENV === "production";
 
 const baseUrl = process.env.BASE_URL || "/";
@@ -17,6 +20,21 @@ const config: Configuration = {
   entry: {
     index: path.join(__dirname, "src", "index.tsx")
   },
+  plugins: [
+      new HtmlWebpackPlugin({
+        inject: "head",
+        minify: isProduction,
+        template: path.join(__dirname, "src", "index.html"),
+        scriptLoading: "defer"
+      }),
+      new CopyWebpackPlugin({
+        patterns: [
+          {
+            from: path.join(__dirname, "assets")
+          }
+        ]
+      })
+  ],
   module: {
     rules: [
       {
