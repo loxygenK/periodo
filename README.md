@@ -10,7 +10,7 @@ then I decided to make it as web application. (Wow such logical)
 
 ## How this works
 This project is under developing now, so this doesn't work now.
-There is no website to public this yet.
+There is no website to publish this yet.
 
 If you want to see how the developing going, or you are interested to
 contribute to this project (omg really), clone me, and run this:
