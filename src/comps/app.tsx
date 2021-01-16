@@ -1,5 +1,5 @@
 import * as React from "react";
-import style from "./style/test.module.scss";
+import style from "../style/test.module.scss";
 
 const App: React.FC = () => (
   <div className={style.test}>
