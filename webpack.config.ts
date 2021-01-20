@@ -6,6 +6,8 @@ import fibers from "fibers";
 
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import CopyWebpackPlugin from "copy-webpack-plugin";
+import webpack from "webpack";
+import dotenv from "dotenv";
 
 const isProduction = process.env.NODE_ENV === "production";
 
@@ -39,6 +41,9 @@ const config: Configuration = {
             from: path.join(__dirname, "assets")
           }
         ]
+      }),
+      new webpack.DefinePlugin({
+        "process.env": JSON.stringify(dotenv.config().parsed)
       })
   ],
   module: {
