@@ -1,4 +1,6 @@
 import firebase from "firebase/app";
+
+import "firebase/auth";
 import "firebase/database";
 
 const api_key = process.env.FIREBASE_API_KEY;
@@ -13,12 +15,14 @@ const firebaseConfig = {
   projectId: project_id,
   storageBucket: `${project_id}.appspot.com`,
   messagingSenderId: sender_id,
-  appId: app_id
+  appId: app_id,
 };
-
 
 firebase.initializeApp(firebaseConfig);
 
 const database = firebase.database();
+const auth = firebase.auth();
+const twitterAuthProvider = new firebase.auth.TwitterAuthProvider();
+twitterAuthProvider.setCustomParameters({ lang: "ja" });
 
-export { database };
+export { auth, twitterAuthProvider, database };
