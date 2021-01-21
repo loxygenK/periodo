@@ -1,6 +1,6 @@
 import { auth, twitterAuthProvider } from "@api/firebase_config";
 
-export type UserCredential = {
+export type Credential = {
   displayName: string | null | undefined;
   uid: string | null | undefined;
 };

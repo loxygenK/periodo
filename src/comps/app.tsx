@@ -1,6 +1,6 @@
 import * as React from "react";
 import TestAuthStuff from "@comp/test_auth_stuff";
-import { UserCredential } from "@api/auth/authentication";
+import { Credential } from "@api/auth/authentication";
 
 type AppState = {
   loggedIn: boolean;
@@ -19,7 +19,7 @@ class App extends React.Component<{}, AppState> {
     }
   }
 
-  handleCredentialChange(credential?: UserCredential) {
+  handleCredentialChange(credential?: Credential) {
     if (credential == null) {
       this.setState({
         loggedIn: false,

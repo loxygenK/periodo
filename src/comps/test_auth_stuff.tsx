@@ -1,9 +1,9 @@
 import * as React from "react";
 import * as Auth from "@api/auth/authentication";
-import { UserCredential } from "@api/auth/authentication";
+import { Credential } from "@api/auth/authentication";
 
 type TestAuthProps = {
-  onLogin: (credential?: UserCredential) => void;
+  onLogin: (credential?: Credential) => void;
   onError: (reason: string) => void;
 };
 class TestAuthStuff extends React.Component<TestAuthProps> {
