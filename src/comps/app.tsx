@@ -8,15 +8,14 @@ type AppState = {
   uid?: string;
 };
 
-class App extends React.Component<{}, AppState> {
-
+class App extends React.Component<Record<string, never>, AppState> {
   constructor() {
     super({});
     this.state = {
       loggedIn: false,
       name: undefined,
-      uid: undefined
-    }
+      uid: undefined,
+    };
   }
 
   handleCredentialChange(credential?: Credential) {
@@ -36,16 +35,21 @@ class App extends React.Component<{}, AppState> {
   }
 
   render() {
-    const cred = (
-        this.state.loggedIn ?
-            (<div>{this.state.name} / {this.state.uid}</div>) :
-            (<div>Please login.</div>)
-    )
+    const cred = this.state.loggedIn ? (
+      <div>
+        {this.state.name} / {this.state.uid}
+      </div>
+    ) : (
+      <div>Please login.</div>
+    );
     return (
       <div>
         <h1>Hello, world!</h1>
         {cred}
-        <TestAuthStuff onLogin={(e) => this.handleCredentialChange(e)} onError={alert} />
+        <TestAuthStuff
+          onLogin={(e) => this.handleCredentialChange(e)}
+          onError={alert}
+        />
       </div>
     );
   }

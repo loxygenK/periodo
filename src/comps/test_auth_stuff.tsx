@@ -30,8 +30,8 @@ class TestAuthStuff extends React.Component<TestAuthProps> {
   render() {
     return (
       <>
-        <button onClick={(e) => this.handleLogin()}>[Log in]</button>
-        <button onClick={(e) => this.handleLogout()}>[Log out]</button>
+        <button onClick={() => this.handleLogin()}>[Log in]</button>
+        <button onClick={() => this.handleLogout()}>[Log out]</button>
       </>
     );
   }
