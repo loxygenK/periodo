@@ -1,0 +1,13 @@
+:root {
+  @media (prefers-color-scheme: light) {
+    --content-background: #EEEEEE;
+    --web-background: #F9F9F9;
+  }
+}
+
+$TextForeground: #333;
+
+$ContentBackground: var(--content-background);
+$WebBackground: var(--web-background);
+
+$Shadow: 0px 0px 14px 7px rgb(0 0 0 / 20%);

@@ -1,0 +1,39 @@
+@import "../variable/color.module.scss";
+
+.header {
+  $HeaderCheckerSize: 2em;
+
+  background: repeating-linear-gradient(
+      -45deg,
+      $ContentBackground calc(0 * #{$HeaderCheckerSize}),
+      $ContentBackground calc(1 * #{$HeaderCheckerSize}),
+      $WebBackground calc(1 * #{$HeaderCheckerSize}),
+      $WebBackground calc(2 * #{$HeaderCheckerSize})
+  );
+  padding: 2em 2.5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  box-shadow: $Shadow;
+
+  .service-name {
+    font-weight: 900;
+    line-height: 1em;
+    font-size: 1.75em;
+  }
+
+  .login-info {
+    line-height: 1.3em;
+    font-size: 0.9em;
+
+    text-align: right;
+
+    .user-name {
+      font-size: 1.2em;
+      font-weight: 700;
+    }
+
+  }
+
+}
