@@ -1,7 +1,16 @@
 @import "variable/color.module";
 
 .app-root {
+  display: flex;
+  flex-direction: column;
   font-family: 'Noto Sans JP', sans-serif;
   background-color: $WebBackground;
   color: $TextForeground;
+
+  height: 100vh;
+}
+
+.section-container {
+  display: flex;
+  flex: 1;
 }

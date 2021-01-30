@@ -1,0 +1,27 @@
+@import "../variable/color.module";
+
+.section {
+  flex: 1;
+  margin: 1.5em 1em;
+  padding: 0.5em;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 0 rgb(0 0 0 / 33%);
+  background-color: $ContentBackground;
+
+  .section-header {
+    padding: 0.5em 0.5em 0.5em 0.5em;
+    border-bottom: 1px solid $Divider;
+    display: flex;
+
+    width: 100%;
+
+    .title {
+      font-size: 1.4em;
+      font-weight: bolder;
+      line-height: 1em;
+      flex: 1;
+    }
+
+  }
+
+}

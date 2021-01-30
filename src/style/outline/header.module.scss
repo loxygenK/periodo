@@ -3,6 +3,7 @@
 .header {
   $HeaderCheckerSize: 2em;
 
+  width: 100%;
   background: repeating-linear-gradient(
       -45deg,
       $ContentBackground calc(0 * #{$HeaderCheckerSize}),

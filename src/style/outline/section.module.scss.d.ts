@@ -1,6 +1,7 @@
 export type Styles = {
-  appRoot: string;
-  sectionContainer: string;
+  section: string;
+  sectionHeader: string;
+  title: string;
 };
 
 export type ClassNames = keyof Styles;
