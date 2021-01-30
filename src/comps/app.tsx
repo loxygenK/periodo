@@ -1,6 +1,8 @@
 import * as React from "react";
-import TestAuthStuff from "@comp/test_auth_stuff";
 import { Credential } from "@api/auth/authentication";
+import {Header} from "@comp/outline/Header";
+
+import style from "@style/app.module.scss";
 
 type AppState = {
   loggedIn: boolean;
@@ -35,21 +37,9 @@ class App extends React.Component<Record<string, never>, AppState> {
   }
 
   render() {
-    const cred = this.state.loggedIn ? (
-      <div>
-        {this.state.name} / {this.state.uid}
-      </div>
-    ) : (
-      <div>Please login.</div>
-    );
     return (
-      <div>
-        <h1>Hello, world!</h1>
-        {cred}
-        <TestAuthStuff
-          onLogin={(e) => this.handleCredentialChange(e)}
-          onError={alert}
-        />
+      <div className={style.appRoot}>
+        <Header onCredentialChange={(cred) => this.handleCredentialChange(cred)} />
       </div>
     );
   }

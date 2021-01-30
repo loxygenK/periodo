@@ -1,0 +1,7 @@
+@import "variable/color.module";
+
+.app-root {
+  font-family: 'Noto Sans JP', sans-serif;
+  background-color: $WebBackground;
+  color: $TextForeground;
+}

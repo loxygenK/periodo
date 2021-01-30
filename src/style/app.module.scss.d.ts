@@ -1,7 +1,6 @@
 export type Styles = {
-  'insideTheTest': string;
-  'test': string;
-}
+  appRoot: string;
+};
 
 export type ClassNames = keyof Styles;
 
